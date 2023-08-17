@@ -1,6 +1,6 @@
-package org.example.hw3;
-
-public class task2 {
+package org.example.hw3.task2;
+import java.io.*;
+public class FileManager {
     public static void readFile(String filePath) throws FileNotFoundException {
         try {
             BufferedReader reader = new BufferedReader(new FileReader(filePath));
@@ -39,17 +39,6 @@ public class task2 {
             outputStream.close();
         } catch (IOException e) {
             throw new IOException("Ошибка при копировании файла");
-        }
-    }
-
-    public static void main(String[] args) {
-        try {
-            readFile("input.txt");
-            writeFile("output.txt", "Пример записи в файл");
-            copyFile("input.txt", "copy.txt");
-            System.out.println("Операции выполнены успешно");
-        } catch (IOException e) {
-            System.out.println("Ошибка: " + e.getMessage());
         }
     }
 }
